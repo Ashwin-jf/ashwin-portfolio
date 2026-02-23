@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashwin | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f5f2ee;
+      color: #111;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    h1 {
+      font-size: 52px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 40px;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .section-title,
+    .projects-header h2,
+    .testimonials-content h2,
+    .final-cta h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .footer h3 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .footer p,
+    .contact-info,
+    .newsletter input,
+    .newsletter button,
+    .footer-links a,
+    .stat p,
+    .project-info p,
+    .testimonial {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ---------- NAV ---------- */
+    .navbar {
+      max-width: 1100px;
+      margin: 0 auto;
+      background: #3a3a3a;
+      border-radius: 999px;
+      padding: 14px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.06);
+      margin-top: 0;
+      transition: top 0.3s cubic-bezier(.4, 2, .6, 1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+      opacity: .8;
+      transition: background .2s, color .2s;
+    }
+
+    .nav-links a.active {
+      background: #fff;
+      color: #000;
+      padding: 6px 16px;
+      border-radius: 999px;
+      opacity: 1;
+    }
+
+    /* ---------- PAGE 1 : HERO ---------- */
+    .hero {
+      max-width: 1100px;
+      margin: 100px auto;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      position: relative;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 52px;
+      line-height: 1.2;
+      margin-bottom: 30px;
+    }
+
+    .hero h1 span {
+      color: #7b1e14
+    }
+
+    .testimonial {
+      max-width: 300px;
+      font-size: 14px;
+      line-height: 1.6;
+      opacity: .85;
+      position: relative;
+      margin-top: 18px;
+    }
+
+    .testimonial::before {
+      content: "“";
+      font-size: 42px;
+      position: absolute;
+      left: -18px;
+      top: -24px;
+    }
+
+    .experience {
+      position: absolute;
+      right: 0;
+      top: 0;
+      text-align: right;
+    }
+
+    .stars {
+      color: #7b1e14;
+      letter-spacing: 3px
+    }
+
+    .experience h2 {
+      font-size: 40px;
+      margin-top: 10px
+    }
+
+    .image-wrapper {
+      height: 420px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      position: relative;
+    }
+
+    .half-circle {
+      width: 360px;
+      height: 180px;
+      background: #2f2f2f;
+      border-top-left-radius: 360px;
+      border-top-right-radius: 360px;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .hero-image {
+      width: 260px;
+      z-index: 2;
+      object-fit: cover;
+    }
+
+    /* ---------- PAGE 2 : SERVICES ---------- */
+    .services-section {
+      max-width: 1100px;
+      margin: 180px auto
+    }
+
+    .section-title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 40px;
+      text-align: center;
+      margin-bottom: 60px
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 30px;
+    }
+
+    .service-card {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 120px;
+      background: #eaeaea;
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(.6)
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      color: #fff
+    }
+
+    .overlay h3 {
+      font-size: 34px
+    }
+
+    .big-card {
+      height: 520px
+    }
+
+    .right-services {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      gap: 24px
+    }
+
+    .small-card {
+      height: 155px
+    }
+
+    /* ---------- PAGE 3 : WHY HIRE ME ---------- */
+    .hire-section {
+      max-width: 1100px;
+      margin: 180px auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      align-items: center;
+      gap: 80px;
+    }
+
+    .hire-image-wrapper {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hire-bg {
+      width: 320px;
+      height: 420px;
+      background: #2f2f2f;
+      border-radius: 28px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .hire-image {
+      width: 260px;
+      z-index: 2;
+      object-fit: cover;
+      position: relative;
+    }
+
+    .hire-content h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 44px;
+      margin-bottom: 20px
+    }
+
+    .hire-content h2 span {
+      color: #7b1e14
+    }
+
+    .hire-content p {
+      max-width: 420px;
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: .85;
+      margin-bottom: 40px
+    }
+
+    .stats {
+      display: flex;
+      gap: 60px;
+      margin-bottom: 40px
+    }
+
+    .stat h3 {
+      font-size: 36px
+    }
+
+    .stat p {
+      font-size: 14px;
+      opacity: .7
+    }
+
+    .hire-btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      border: 1px solid #111;
+      background: transparent;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+
+    .hire-btn:hover {
+      background: #111;
+      color: #fff;
+    }
+
+    .hire-btn,
+    .cta-button,
+    .see-all-btn,
+    .arrow-btn {
+      display: inline-block;
+      background: #2f2f2f;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.10);
+      transition: transform 0.15s cubic-bezier(.4, 2, .6, 1), box-shadow 0.15s, background 0.2s, color 0.2s;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+    }
+
+    .hire-btn:hover,
+    .cta-button:hover,
+    .see-all-btn:hover,
+    .arrow-btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.18);
+      background: #111;
+      color: #fff;
+      opacity: 0.95;
+    }
+
+    .hire-btn.whatsapp {
+      background: #25D366;
+      color: #fff;
+      margin-top: 16px;
+    }
+
+    .hire-btn.whatsapp:hover {
+      background: #128C7E;
+    }
+
+    /* ---------- PAGE 4 : EXPERIENCE ---------- */
+    .experience-section {
+      max-width: 1100px;
+      margin: 180px auto
+    }
+
+    .timeline {
+      margin-top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 80px;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      width: 2px;
+      background: none;
+      border-left: 2px dashed #999;
+      /* Start at center of first dot, end at center of last dot */
+      top: calc(40px - 10px);
+      /* 40px = half timeline-item gap, 10px = half dot */
+      bottom: calc(40px - 10px);
+      transform: translateX(-50%);
+      height: auto;
+      z-index: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      align-items: center;
+    }
+
+    .timeline-center {
+      display: flex;
+      justify-content: center;
+      z-index: 2;
+    }
+
+    .dot {
+      width: 20px;
+      height: 20px;
+      background: #333;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .dot.active {
+      background: #7b1e14;
+    }
+
+    .timeline-left {
+      text-align: right;
+      padding-right: 30px;
+    }
+
+    .timeline-right {
+      padding-left: 30px;
+    }
+
+    /* ---------- PAGE 5 : PROJECTS ---------- */
+    .projects-page {
+      padding: 100px 8%;
+      background: #f6f4f1;
+    }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .projects-header h2 {
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #333;
+    }
+
+    .projects-header span {
+      color: #7a2e1f;
+    }
+
+    .see-all-btn {
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: none;
+      background: #2f2f2f;
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .see-all-btn:hover {
+      background: #7a2e1f;
+    }
+
+    .project-slider-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .arrow-btn.arrow-left {
+      left: 0;
+      right: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .arrow-btn.arrow-right {
+      right: 0;
+      left: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .project-frame {
+      margin: 0 60px;
+    }
+
+    .project-frame {
+      width: 620px;
+      height: 320px;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #eaeaea;
+    }
+
+    .project-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: 0.4s ease;
+    }
+
+    .arrow-btn {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid #333;
+      background: transparent;
+      font-size: 20px;
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      box-shadow: none;
+      transition: background 0.2s, color 0.2s;
+      padding: 0;
+      color: #333;
+    }
+
+    .arrow-btn:hover {
+      background: #7a2e1f;
+      color: #fff;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .project-info {
+      text-align: center;
+      margin-top: 40px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-info h3 {
+      display: inline-block;
+      padding: 10px 22px;
+      border: 1px solid #333;
+      border-radius: 30px;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .project-info p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* ---------- PAGE 6 : TESTIMONIALS ---------- */
+    .testimonials-page {
+      position: relative;
+      padding: 120px 8%;
+      background: url("./Images/Artboard 6 background image.jpg") center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .testimonials-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    .testimonials-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      text-align: center;
+    }
+
+    .testimonials-content h2 {
+      font-size: 44px;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .testimonials-content .stars {
+      font-size: 26px;
+      letter-spacing: 6px;
+      margin-bottom: 70px;
+    }
+
+    .testimonials-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .testimonial-img {
+      max-width: 360px;
+      width: 100%;
+      border-radius: 26px;
+      opacity: 0.9;
+      object-fit: cover;
+    }
+
+    .testimonial-img.center {
+      max-width: 420px;
+      transform: translateY(-20px);
+      opacity: 1;
+    }
+
+    /* ---------- PAGE 7 : FINAL CTA + FOOTER ---------- */
+    .final-section {
+      background: #f5f3ef;
+      padding: 100px 6% 0;
+      font-family: 'Poppins', sans-serif;
+      color: #2e2e2e;
+    }
+
+    .final-cta {
+      text-align: center;
+      margin-bottom: 90px;
+    }
+
+    .final-cta h2 {
+      font-size: 44px;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 28px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #2f2f2f;
+      color: #fff;
+      padding: 14px 36px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 16px;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .cta-stats {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 28px;
+      font-size: 14px;
+      opacity: 0.85;
+    }
+
+    .footer {
+      background: #3a3a3a;
+      color: #fff;
+      border-radius: 50px 50px 0 0;
+      padding: 70px 6% 50px;
+      margin-top: 60px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 60px;
+      align-items: flex-start;
+    }
+
+    .footer h3 {
+      font-size: 20px;
+      margin-bottom: 18px;
+    }
+
+    .footer p {
+      font-size: 14px;
+      line-height: 1.6;
+      opacity: 0.85;
+      max-width: 360px;
+    }
+
+    .social-image {
+      margin-top: 26px;
+      max-width: 180px;
+    }
+
+    .social-image img {
+      width: 100%;
+      display: block;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 12px;
+    }
+
+    .footer-links a {
+      color: #fff;
+      text-decoration: none;
+      opacity: 0.85;
+      font-size: 14px;
+      transition: opacity .2s;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      margin-bottom: 14px;
+      opacity: 0.9;
+    }
+
+    .newsletter {
+      display: flex;
+      margin-top: 18px;
+      background: #fff;
+      border-radius: 30px;
+      overflow: hidden;
+      max-width: 260px;
+    }
+
+    .newsletter input {
+      border: none;
+      padding: 12px 16px;
+      outline: none;
+      flex: 1;
+      font-size: 14px;
+    }
+
+    .newsletter button {
+      background: #2f2f2f;
+      border: none;
+      color: #fff;
+      padding: 0 18px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background .2s;
+    }
+
+    .newsletter button:hover {
+      background: #7a2e1f;
+    }
+
+    /* ---------- PAGE 5 STYLES ---------- */
+    .projects-page {
+      padding: 100px 8%;
+      background: #f6f4f1;
+    }
+
+    .projects-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .projects-header h2 {
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #333;
+    }
+
+    .projects-header span {
+      color: #7a2e1f;
+    }
+
+    .see-all-btn {
+      padding: 10px 22px;
+      border-radius: 30px;
+      border: none;
+      background: #2f2f2f;
+      color: #fff;
+      cursor: pointer;
+      transition: background .2s;
+    }
+
+    .see-all-btn:hover {
+      background: #7a2e1f;
+    }
+
+    /* ---------- SLIDER ---------- */
+    .project-slider-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .arrow-btn.arrow-left {
+      left: 0;
+      right: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .arrow-btn.arrow-right {
+      right: 0;
+      left: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .project-frame {
+      margin: 0 60px;
+    }
+
+    /* ---------- DESCRIPTION ---------- */
+    .project-info {
+      text-align: center;
+      margin-top: 40px;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .project-info h3 {
+      display: inline-block;
+      padding: 10px 22px;
+      border: 1px solid #333;
+      border-radius: 30px;
+      margin-bottom: 18px;
+      font-weight: 500;
+    }
+
+    .project-info p {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:1100px) {
+      .hero,
+      .services-section,
+      .hire-section,
+      .experience-section,
+      .projects-page,
+      .testimonials-page,
+      .final-section {
+        padding-left: 3%;
+        padding-right: 3%;
+      }
+      .footer-grid {
+        gap: 30px;
+      }
+    }
+
+    @media(max-width:900px) {
+      .hero,
+      .services-grid,
+      .hire-section {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+      }
+      .hero {
+        margin: 60px auto;
+      }
+      .image-wrapper {
+        height: 260px;
+      }
+      .half-circle {
+        width: 200px;
+        height: 100px;
+      }
+      .hero-image {
+        width: 140px;
+      }
+      .experience {
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .timeline::before {
+        left: 20px;
+        transform: none;
+      }
+      .timeline-item {
+        grid-template-columns: 40px 1fr;
+      }
+      .timeline-left,
+      .timeline-right {
+        text-align: left;
+        padding: 0;
+      }
+      .projects-header h2 {
+        font-size: 30px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .footer {
+        border-radius: 30px 30px 0 0;
+      }
+      .social-image {
+        max-width: 150px;
+      }
+      .cta-stats {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .final-cta h2 {
+        font-size: 34px;
+      }
+      .services-grid {
+        gap: 18px;
+      }
+      .big-card {
+        height: 260px;
+      }
+      .small-card {
+        height: 90px;
+      }
+    }
+
+    @media(max-width:768px) {
+      .project-frame {
+        width: 98vw;
+        height: 180px;
+        margin: 0 0;
+      }
+      .arrow-left {
+        left: -20px;
+      }
+      .arrow-right {
+        right: -20px;
+      }
+      .testimonials-content h2 {
+        font-size: 24px;
+      }
+      .testimonials-wrapper {
+        gap: 12px;
+      }
+      .testimonial-img.center {
+        transform: none;
+        max-width: 220px;
+      }
+      .testimonial-img {
+        max-width: 120px;
+      }
+      .services-section {
+        margin: 80px auto;
+      }
+      .hire-section {
+        margin: 80px auto;
+        gap: 30px;
+      }
+      .hire-bg {
+        width: 180px;
+        height: 220px;
+      }
+      .hire-image {
+        width: 120px;
+      }
+      .stats {
+        gap: 24px;
+      }
+    }
+
+    @media(max-width:600px) {
+      /* Hide navbar and projects-header on mobile */
+      .navbar,
+      .projects-header {
+        display: none !important;
+      }
+      /* Larger images for hero, services, projects, testimonials */
+      .hero-image {
+        width: 120px;
+      }
+      .image-wrapper {
+        height: 160px;
+      }
+      .half-circle {
+        width: 180px;
+        height: 90px;
+      }
+      .hire-image {
+        width: 90px;
+      }
+      .hire-bg {
+        width: 120px;
+        height: 140px;
+      }
+      .service-card.big-card {
+        height: 180px;
+      }
+      .service-card.small-card {
+        height: 90px;
+      }
+      .project-frame {
+        height: 160px;
+      }
+      .testimonial-img.center {
+        max-width: 80px;
+      }
+      .testimonial-img {
+        max-width: 50px;
+      }
+      /* Timeline section mobile fix */
+      .timeline {
+        gap: 30px;
+        margin-top: 40px;
+      }
+      .timeline::before {
+        display: none;
+      }
+      .timeline-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        padding: 12px 0;
+      }
+      .timeline-center {
+        order: 1;
+        margin: 8px 0;
+      }
+      .timeline-left, .timeline-right {
+        text-align: left;
+        padding: 0;
+        order: 2;
+      }
+      .timeline-left h3, .timeline-right h3 {
+        font-size: 16px;
+      }
+      .dot {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    @media(max-width:480px) {
+      .navbar {
+        padding: 6px 2px;
+      }
+      .nav-links {
+        gap: 8px;
+      }
+      .hero {
+        margin: 30px auto;
+      }
+      .image-wrapper {
+        height: 80px;
+      }
+      .half-circle {
+        width: 60px;
+        height: 30px;
+      }
+      .hero-image {
+        width: 30px;
+      }
+      .hire-bg {
+        width: 40px;
+        height: 50px;
+      }
+      .hire-image {
+        width: 24px;
+      }
+      .big-card {
+        height: 60px;
+      }
+      .small-card {
+        height: 24px;
+      }
+      .project-frame {
+        height: 60px;
+      }
+      .testimonial-img.center {
+        max-width: 40px;
+      }
+      .testimonial-img {
+        max-width: 20px;
+      }
+      .footer {
+        padding: 10px 1% 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-links">
+      <a class="active" href="#home">Home</a>
+      <a href="#services">Service</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- PAGE 1 -->
+  <section class="hero" id="home">
+    <div>
+      <h1>I’m <span>Ashwin</span>,<br>Integrated Marketing Manager.</h1>
+      <div class="testimonial">
+        Working with Ashwin was effortless and impactful. He understood our brand deeply and executed every strategy
+        creatively.
+      </div>
+    </div>
+
+    <div class="experience">
+      <div class="stars">★★★★★</div>
+      <h2>2 Years</h2>
+      <p>Experience</p>
+    </div>
+
+    <div class="image-wrapper">
+      <div class="half-circle"></div>
+      <!-- PAGE 1 IMAGE -->
+      <img src="./Images/Page 1 stock Img.png" class="hero-image">
+    </div>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section class="services-section" id="services">
+    <h2 class="section-title">My Service</h2>
+    <div class="services-grid">
+      <div class="service-card big-card">
+        <img src="./Images/Graphic Design Artboard 2.png">
+        <div class="overlay">
+          <p>Graphic</p>
+          <h3>Design</h3>
+        </div>
+      </div>
+      <div class="right-services">
+        <div class="service-card small-card">
+          <img src="./Images/Content Writing PNG.png">
+          <div class="overlay">
+            <p>Content</p>
+            <h3>Writing</h3>
+          </div>
+        </div>
+        <div class="service-card small-card">
+          <img src="./Images/Strategist PNG.png">
+          <div class="overlay">
+            <p>Campaign</p>
+            <h3>Strategy</h3>
+          </div>
+        </div>
+        <div class="service-card small-card">
+          <img src="./Images/SMM PNG.png">
+          <div class="overlay">
+            <p>Social Media</p>
+            <h3>Management</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 3 -->
+  <section class="hire-section" id="about">
+    <div class="hire-image-wrapper">
+      <div class="hire-bg"></div>
+      <!-- PAGE 3 IMAGE -->
+      <img src="./Images/Page 3 Png.png" class="hire-image">
+    </div>
+
+    <div class="hire-content">
+      <h2>Why <span>Hire</span> me?</h2>
+      <p>If you’re looking for someone who can think strategically, execute creatively, and understand your business,
+        let’s connect.</p>
+      <div class="stats">
+        <div class="stat">
+          <h3>20+</h3>
+          <p>Campaigns</p>
+        </div>
+        <div class="stat">
+          <h3>10+</h3>
+          <p>Clients</p>
+        </div>
+      </div>
+      <a href="mailto:aswinjer@gmail.com" class="hire-btn">Hire me</a>
+      <button class="hire-btn whatsapp" onclick="window.open('https://wa.me/919659866353','_blank')">WhatsApp
+        me</button>
+    </div>
+  </section>
+
+  <!-- PAGE 4 -->
+  <section class="experience-section" id="experience">
+    <h2 class="section-title">My Work Experience</h2>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <h3>Prettify</h3>
+          <p>Nov 2023 - Aug 2024</p>
+        </div>
+        <div class="timeline-center"><span class="dot"></span></div>
+        <div class="timeline-right">
+          <h3>Social Media Manager</h3>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <h3>Duke & Duchess</h3>
+          <p>Aug 2024 - Aug 2025</p>
+        </div>
+        <div class="timeline-center"><span class="dot active"></span></div>
+        <div class="timeline-right">
+          <h3>Creative Director</h3>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-left">
+          <h3>Mercor</h3>
+          <p>Aug 2025 - Jan 2026</p>
+        </div>
+        <div class="timeline-center"><span class="dot"></span></div>
+        <div class="timeline-right">
+          <h3>Photoshop Expert</h3>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== PAGE 5 : PROJECTS ===================== -->
+  <section class="projects-page">
+
+    <!-- HEADER -->
+    <div class="projects-header">
+      <h2>Let’s have a look at<br>my <span>Projects</span></h2>
+      <a class="see-all-btn"
+        href="https://drive.google.com/drive/folders/1DXW8QAJEh20FJ5TPtQgBNy5_AUh0bD80?usp=drive_link" target="_blank"
+        rel="noopener">See all</a>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="project-slider-container">
+      <button class="arrow-btn arrow-left" id="prevProject">&#8592;</button>
+
+      <div class="project-frame">
+        <img id="projectImage" src="./Images/Project Jus Leap PNG.png" alt="Project">
+      </div>
+
+      <button class="arrow-btn arrow-right" id="nextProject">&#8594;</button>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="project-info" id="projectInfo">
+      <h3>Jus Leap launch campaign</h3>
+      <p>
+        Jus Leap is a purpose driven menstrual care brand focused on sustainable solutions.
+        I planned and executed the launch strategy, shaping clear messaging and building
+        strong initial traction with the target audience.
+      </p>
+    </div>
+
+    <script>
+      /* ---------- PAGE 5 SCRIPT ---------- */
+      const projects = [
+        {
+          img: "./Images/Project Jus Leap PNG.png",
+          title: "Jus Leap launch campaign",
+          desc: "Jus Leap is a purpose driven menstrual care brand focused on sustainable solutions. I planned and executed the launch strategy, shaping clear messaging and building strong initial traction with the target audience.",
+          link: "https://drive.google.com/drive/folders/1pkrsF-V1a-_NY39YbCZmYLeLqwrvrCTE?usp=drive_link"
+        },
+        {
+          img: "./Images/Project Prettify PNG.png",
+          title: "Project Prettify",
+          desc: "Prettify is a boutique fashion brand focused on elegant, contemporary styling. I led the creative and social media strategy, shaping a consistent visual identity and content approach.",
+          link: "https://drive.google.com/drive/folders/1HmVNrF6EkB5nnBY9yG4RDp9Yo4uVrwCw?usp=drive_link"
+        },
+        {
+          img: "./Images/D&D Creative direction PNG.png",
+          title: "D&D Creative direction",
+          desc: "Duke & Duchess follows a bold, minimal creative direction rooted in strong typography and timeless design, building a confident and premium visual identity.",
+          link: "https://drive.google.com/drive/folders/17Wd9zdHDZomC43NSd-iBVspYN_EMCwCU?usp=drive_link"
+        }
+      ];
+
+      let current = 0;
+      const image = document.getElementById("projectImage");
+      const info = document.getElementById("projectInfo");
+
+      function updateProject() {
+        image.src = projects[current].img;
+        image.style.cursor = "pointer";
+        image.onclick = () => window.open(projects[current].link, '_blank');
+        info.innerHTML = `
+        <h3 style="cursor:pointer;" onclick="window.open('${projects[current].link}','_blank')">${projects[current].title}</h3>
+        <p style="cursor:pointer;" onclick="window.open('${projects[current].link}','_blank')">${projects[current].desc}</p>      `;
+      }
+
+      document.getElementById("nextProject").onclick = () => {
+        current = (current + 1) % projects.length;
+        updateProject();
+      };
+
+      document.getElementById("prevProject").onclick = () => {
+        current = (current - 1 + projects.length) % projects.length;
+        updateProject();
+      };
+
+      // Initial set clickable for first project
+      updateProject();
+    </script>
+
+  </section>
+  <!-- ===================== END PAGE 5 ===================== -->
+
+
+
+  <!-- ===================== PAGE 6 : TESTIMONIALS ===================== -->
+  <section class="testimonials-page" id="testimonials">
+
+    <!-- DARK OVERLAY -->
+    <div class="testimonials-overlay"></div>
+
+    <!-- CONTENT -->
+    <div class="testimonials-content">
+
+      <h2>Testimonials That<br>Speak to My Results ”</h2>
+      <div style="font-size:26px;letter-spacing:6px;margin-bottom:70px;">★★★★★</div>
+
+
+      <!-- TESTIMONIAL PNGs -->
+      <div class="testimonials-wrapper">
+
+        <!-- LEFT -->
+        <img src="./Images/Mr. Anim hussain EPM_ PNG.png" alt="Testimonial Left" class="testimonial-img">
+
+        <!-- CENTER -->
+        <img src="./Images/Testimonial 1 PNG.png" alt="Testimonial Center" class="testimonial-img center">
+
+        <!-- RIGHT -->
+        <img src="./Images/Testimonial 2 PNG.png" alt="Testimonial Right" class="testimonial-img">
+
+      </div>
+
+    </div>
+
+  </section>
+  <!-- ===================== END PAGE 6 ===================== -->
+
+
+  <!-- ===================== PAGE 7 : FINAL CTA + FOOTER ===================== -->
+  <section class="final-section" id="contact">
+
+    <!-- CTA -->
+    <div class="final-cta">
+      <h2>Have an awesome project<br>idea? Let’s connect</h2>
+      <a href="mailto:aswinjer@gmail.com" class="cta-button">Hire me</a>
+      <button class="hire-btn whatsapp" onclick="window.open('https://wa.me/919659866353','_blank')">WhatsApp
+        me</button>
+
+      <div class="cta-stats">
+        <span>4.9/5 Average ratings</span>
+        <span>10+ Satisfied clients</span>
+        <span>Certified marketer</span>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+      <div class="footer-grid">
+
+        <!-- LEFT -->
+        <div>
+          <h3>A Note Before You Go</h3>
+          <p>
+            I believe good marketing isn’t about doing more, but about doing the
+            right things consistently and with purpose.<br><br>
+            If you’re building a brand and need someone who understands both the
+            creative and business side of marketing, I’d love to collaborate.
+          </p>
+
+          <!-- SOCIAL PNG IMAGE -->
+          <div class="social-image">
+            <img src="./Images/Socials.png" alt="Social media icons">
+          </div>
+        </div>
+
+        <!-- CENTER -->
+        <div>
+          <h3>Navigation</h3>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- RIGHT -->
+        <div>
+          <h3>Contact</h3>
+          <div class="contact-info">+91 9659866353</div>
+          <div class="contact-info">aswinjer@gmail.com</div>
+
+          <h3 style="margin-top:26px;">Get the latest information</h3>
+          <form class="newsletter">
+            <input type="email" placeholder="Email address" required>
+            <button type="submit">➜</button>
+          </form>
+        </div>
+
+      </div>
+
+    </footer>
+
+  </section>
+  <!-- ===================== END PAGE 7 ===================== -->
+
+
+
+
+  <script>
+    // ===================== TESTIMONIALS SLIDER =====================
+    (function () {
+      const wrapper = document.querySelector('.testimonials-wrapper');
+      if (!wrapper) return;
+      const imgs = Array.from(wrapper.querySelectorAll('.testimonial-img'));
+      let idx = 1; // center image index
+      function updateTestimonials() {
+        imgs.forEach((img, i) => {
+          img.classList.remove('center');
+          img.style.opacity = '0.7';
+          img.style.transform = 'scale(0.92)';
+          img.style.zIndex = '1';
+        });
+        imgs[idx].classList.add('center');
+        imgs[idx].style.opacity = '1';
+        imgs[idx].style.transform = 'scale(1.08)';
+        imgs[idx].style.zIndex = '2';
+        // Reorder DOM for visual effect
+        wrapper.innerHTML = '';
+        if (imgs.length === 3) {
+          wrapper.appendChild(imgs[(idx + 2) % 3]);
+          wrapper.appendChild(imgs[idx]);
+          wrapper.appendChild(imgs[(idx + 1) % 3]);
+        } else {
+          imgs.forEach(img => wrapper.appendChild(img));
+        }
+      }
+      setInterval(() => {
+        idx = (idx + 1) % imgs.length;
+        updateTestimonials();
+      }, 3000);
+      updateTestimonials();
+    })();
+
+    // ===================== NAVBAR ACTIVE LINK =====================
+    (function () {
+      const links = document.querySelectorAll('.nav-links a');
+      let lastActiveIndex = 0;
+      // Debounce for scroll event
+      let ticking = false;
+      function setActive() {
+        let found = false;
+        const scrollPos = window.scrollY + 140; // Offset for sticky nav
+        // Sort links by section offsetTop to avoid jitter
+        const linkSections = Array.from(links).map((link, i) => {
+          const section = document.querySelector(link.getAttribute('href'));
+          return section ? { link, section, top: section.offsetTop, i } : null;
+        }).filter(Boolean).sort((a, b) => a.top - b.top);
+        for (let j = 0; j < linkSections.length; j++) {
+          const { link, section, top, i } = linkSections[j];
+          const bottom = top + section.offsetHeight;
+          if (scrollPos >= top && scrollPos < bottom) {
+            links.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            lastActiveIndex = i;
+            found = true;
+            break;
+          }
+        }
+        if (!found && links.length) {
+          // Instead of always jumping to last, keep previous active
+          links.forEach(l => l.classList.remove('active'));
+          links[lastActiveIndex].classList.add('active');
+        }
+        ticking = false;
+      }
+      function onScroll() {
+        if (!ticking) {
+          window.requestAnimationFrame(setActive);
+          ticking = true;
+        }
+      }
+      window.addEventListener('scroll', onScroll);
+      window.addEventListener('resize', setActive);
+      setActive();
+      // Smooth scroll for nav links
+      links.forEach((link, i) => {
+        link.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            const y = target.getBoundingClientRect().top + window.pageYOffset - 90;
+            window.scrollTo({ top: y, behavior: 'smooth' });
+            // Set active immediately for click
+            links.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+            lastActiveIndex = i;
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+
+</html>
